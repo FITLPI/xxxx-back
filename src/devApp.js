@@ -16,6 +16,7 @@ nodemon
     if (!url) {
       url = await ngrok.connect({ port: port });
       console.log(`Server now available at ${url}`);
+      require("child_process").exec(`start ${url}`);
     }
   })
   .on("quit", async () => {
